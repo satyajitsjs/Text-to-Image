@@ -9,7 +9,7 @@ from .models import ImageResult
 @shared_task
 def texttoimage(prompt):
     engine_id = "stable-diffusion-xl-1024-v1-0"
-    api_host = os.getenv('API_HOST', 'https://api.stability.ai')
+    api_host = 'https://api.stability.ai'
     api_key = settings.STABILITY_API_KEY
 
     if api_key is None:

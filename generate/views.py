@@ -29,7 +29,7 @@ def check_task_status(request, task_id):
         prompt = task_result.result
         print(prompt)
 
-        image_result = ImageResult.objects.filter(prompt=prompt).first()
+        image_result = ImageResult.objects.filter(prompt=prompt).last()
         if image_result:
             response_data['image_url'] = image_result.image.url
         else:
