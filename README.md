@@ -53,9 +53,9 @@ This project converts text prompts into images using a Django backend and Celery
     celery -A Text_to_Image worker --loglevel=info
     ```
 
-Usage
-Trigger a task:
-Send a POST request to /trigger_task with a JSON body containing the prompts.
+# Usage
+## Trigger a task:
+- Send a POST request to /trigger_task with a JSON body containing the prompts.
 
     ```json
     {
@@ -63,5 +63,5 @@ Send a POST request to /trigger_task with a JSON body containing the prompts.
     }
     ```
 
-Check task status:
-Send a GET request to /check_task_status/<task_id> to check the status of a task.
+## Check task status:
+- Send a GET request to /check_task_status/<task_id> to check the status of a task.
