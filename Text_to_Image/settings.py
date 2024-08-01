@@ -137,9 +137,5 @@ CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TIMEZONE = 'UTC'
 
-# Add this at the bottom of the settings.py file
-# from .celery import app as celery_app
-# __all__ = ('celery_app',)
 
-
-STABILITY_API_KEY = 'sk-aYL8e0fINuheCuwcwQ9u4j1MJQLPS8IAJ7DJCG9Hs9bAdO02'
+STABILITY_API_KEY = ''

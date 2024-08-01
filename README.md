@@ -13,7 +13,7 @@ This project converts text prompts into images using a Django backend and Celery
 1. **Clone the repository:**
 
     ```sh
-    git clone <repository-url>
+    git clone [<repository-url>](https://github.com/satyajitsjs/Text-to-Image.git)
     cd Text-to-Image
     ```
 
@@ -35,8 +35,11 @@ This project converts text prompts into images using a Django backend and Celery
     ```sh
     python manage.py migrate
     ```
+5. **Put The Stability Api Key:**
+    - In settings.py
+        - STABILITY_API_KEY = "Your API KEY"
 
-5. **Run the development server:**
+6. **Run the development server:**
 
     ```sh
     python manage.py runserver
