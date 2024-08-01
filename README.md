@@ -65,3 +65,4 @@ This project converts text prompts into images using a Django backend and Celery
 
 ## Check task status:
 - Send a GET request to /check_task_status/<task_id> to check the status of a task.
+- And it will gave the image as response

@@ -1,9 +1,7 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 from generate.task import texttoimage
-from django.http import JsonResponse
 from celery.result import AsyncResult
-from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
 import json
@@ -20,9 +18,8 @@ def trigger_task(request):
     except json.JSONDecodeError:
         return JsonResponse({'error': 'Invalid JSON'}, status=400)
 
-    task = texttoimage.delay([prompt])
+    task = texttoimage.delay(prompt)
     return JsonResponse({'task_id': task.id, 'message': 'Task has been triggered successfully'})
-
 
 def check_task_status(request, task_id):
     task_result = AsyncResult(task_id)
@@ -30,6 +27,8 @@ def check_task_status(request, task_id):
 
     if task_result.status == 'SUCCESS':
         prompt = task_result.result
+        print(prompt)
+
         image_result = ImageResult.objects.filter(prompt=prompt).first()
         if image_result:
             response_data['image_url'] = image_result.image.url
